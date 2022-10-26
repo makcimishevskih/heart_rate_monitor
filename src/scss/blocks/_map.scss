@@ -1,0 +1,70 @@
+@import '../vars/vars.scss';
+
+.map {
+    min-height: 630px;
+    position: relative;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+
+        .map__info {
+            padding: 0 10px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            height: 270px;
+            min-width: 300px;
+            max-width: 460px;
+            background-color: $main-color;
+            font-size: 20px;
+            text-align: center;
+
+            .map__address {
+                margin-top: 50px;
+                font-style: normal;
+            }
+
+            .map__phone {
+                font-weight: 700;
+                margin-top: 35px;
+                display: inline-block;
+            }
+
+        }
+
+        .map__icons {
+            width: 210px;
+            margin: 35px auto 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .map__link-icon {
+                position: relative;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                border: 2px solid #fff;
+
+                .map__icon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    max-height: 27px;
+                    max-width: 27px;
+                    object-fit: cover;
+                }
+            }
+
+            // }
+
+        }
+    }
+}
+
+@media (max-width: 621px) {}
+
+@media (max-width: 450px) {}

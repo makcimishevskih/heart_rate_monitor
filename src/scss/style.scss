@@ -1,0 +1,210 @@
+@import 'blocks/promo';
+@import 'blocks/header';
+@import 'blocks/selection';
+@import 'blocks/advantage';
+@import 'blocks/carousel';
+@import 'blocks/consultation';
+@import 'blocks/catalog';
+@import 'blocks/modal';
+@import 'blocks/clients';
+@import 'blocks/map';
+@import 'vars/vars';
+
+@media (max-width: 621px) {}
+
+@media (max-width: 450px) {}
+
+@font-face {
+    font-family: "MuseoSansCyrl";
+    src: url("/fonts/MuseoSansCyrl300.eot");
+    src: url("/fonts/MuseoSansCyrl300.eot?#iefix")format("embedded-opentype"),
+        url("/fonts/MuseoSansCyrl300.woff") format("woff"),
+        url("/fonts/MuseoSansCyrl300.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "MuseoSansCyrl";
+    src: url("/fonts/MuseoSansCyrl500.eot");
+    src: url("/fonts/MuseoSansCyrl500.eot?#iefix")format("embedded-opentype"),
+        url("/fonts/MuseoSansCyrl500.woff") format("woff"),
+        url("/fonts/MuseoSansCyrl500.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "MuseoSansCyrl";
+    src: url("/fonts/MuseoSansCyrl700.eot");
+    src: url("/fonts/MuseoSansCyrl700.eot?#iefix")format("embedded-opentype"),
+        url("/fonts/MuseoSansCyrl700.woff") format("woff"),
+        url("/fonts/MuseoSansCyrl700.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "MuseoSansCyrl";
+    src: url("/fonts/MuseoSansCyrl900.eot");
+    src: url("/fonts/MuseoSansCyrl900.eot?#iefix")format("embedded-opentype"),
+        url("/fonts/MuseoSansCyrl900.woff") format("woff"),
+        url("/fonts/MuseoSansCyrl900.ttf") format("truetype");
+    font-weight: 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    color: $main-color;
+}
+
+button {
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+input {
+    border: none;
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+body {
+    font-family: 'MuseoSansCyrl', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    // margin: 0 auto;
+    height: 100%;
+}
+
+.container {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 10px;
+    overflow: hidden;
+}
+
+.button {
+    background-color: $main-color;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.button_xsmall {
+    width: 131px;
+    height: 40px;
+}
+
+.button_small {
+    width: 150px;
+    height: 30px;
+}
+
+.button_big {
+    width: 300px;
+    height: 50px;
+}
+
+
+.phone-link {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.input {
+    outline: 0;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+
+
+.btn_animation {
+    background-image: linear-gradient(45deg, #05aa4a 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 0.4s ease-in-out;
+}
+
+.btn_animation:hover {
+    background-position: 0;
+}
+
+.error-status {
+    font-size: 16px;
+    color: red;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: center;
+    animation: errorAnim 0.3s ease-in-out;
+}
+
+@keyframes errorAnim {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+}

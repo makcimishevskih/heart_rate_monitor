@@ -1,0 +1,124 @@
+@import '../vars/vars.scss';
+
+.modal-layout {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    display: none;
+    place-items: center;
+    z-index: 20;
+
+    &.open {
+        display: grid;
+    }
+
+    .modal-wrapper {
+        width: 380px;
+        max-height: 600px;
+        min-height: 400px;
+        background-color: #f2f2f2;
+        position: absolute;
+        z-index: 50;
+        border-radius: 10px;
+        color: rgb(13, 13, 13);
+        animation: fadeIn 0.2s ease-in;
+
+        &.status-modal {
+            display: grid;
+            place-items: center;
+            min-height: 180px;
+        }
+
+        .modal,
+        .modal.not-cart-form,
+        .modal.cart-form {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 40px;
+
+            &.open {
+                display: flex;
+            }
+
+            &__title {
+                font-size: 19px;
+                text-align: center;
+                margin-bottom: 10px;
+                font-weight: 700;
+                max-width: 305px;
+            }
+
+            &__price {
+                font-size: 14px;
+                text-align: center;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+
+            &__subtitle {
+                font-size: 14px;
+                text-align: center;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+
+            & input:nth-child(6) {
+                margin-bottom: 20px;
+            }
+
+            input {
+                margin-bottom: 15px;
+                height: 50px;
+                width: 300px;
+                padding: 20px;
+                font-size: 14px;
+                border-radius: 5px;
+            }
+
+            &__close-button {
+                position: absolute;
+                top: -10px;
+                left: 95%;
+                width: 30px;
+                font-size: 24px;
+                background-color: #f2f2f2;
+                color: $main-color;
+                border-radius: 50%;
+                text-align: center;
+                z-index: 10;
+                cursor: pointer;
+                display: block;
+            }
+
+            button.button {
+                font-size: 16px;
+            }
+        }
+
+        .modal.cart-form {
+            display: none;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 621px) {}
+
+@media (max-width: 450px) {}

@@ -1,0 +1,23 @@
+.promo {
+    min-height: 650px;
+    padding: 21px 0 93px 0;
+    background: url(../../img/first_bg.png) center center / cover no-repeat;
+    max-width: 100%;
+}
+
+
+@media (max-width: 621px) {
+    .promo {
+        background-position: 20% 50%;
+        min-height: 500px;
+        padding: 21px 0 63px 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .promo {
+        background-position: 30% 50%;
+        padding: 15px 0 43px 0;
+
+    }
+}

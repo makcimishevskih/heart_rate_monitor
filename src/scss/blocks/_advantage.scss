@@ -1,0 +1,103 @@
+@import '../vars/vars.scss';
+
+.advantage {
+    color: rgb(13, 13, 13);
+    padding: 65px 0 95px;
+    background-color: rgb(246, 246, 246);
+
+    .advantage__container {
+        .advantage__title {
+            margin-bottom: 70px;
+        }
+
+        .advantage__row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 5px;
+
+            &-item {
+                text-align: center;
+                width: 285px;
+
+                .advantage__subtitle {
+                    margin-top: 35px;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
+
+                .advantage__descr {
+                    padding: 0;
+                    margin: 0;
+                    font-size: 14px;
+                    font-weight: 300;
+
+                    &>span {
+                        text-decoration: underline;
+                        text-transform: uppercase;
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 621px) {
+    .advantage {
+        padding: 45px 0 75px;
+
+        .advantage__container {
+            .advantage__title {
+                font-weight: bold;
+                margin-bottom: 45px;
+            }
+
+            .advantage__row {
+                column-gap: 5px;
+
+                &-item {
+                    width: 200px;
+
+                    .advantage__subtitle {
+                        margin-top: 15px;
+                        font-size: 18px;
+                    }
+
+                    .advantage__descr {
+                        padding: 0;
+                        margin: 0;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .advantage {
+        padding: 45px 0 45px;
+
+        .advantage__container {
+            .advantage__title {
+                margin-bottom: 35px;
+            }
+
+            .advantage__row {
+                flex-direction: column;
+                align-items: center;
+                row-gap: 20px;
+
+                &-item {
+                    width: 250px;
+
+                    .advantage__subtitle {
+                        margin-top: 10px;
+                    }
+
+                }
+            }
+        }
+    }
+}
