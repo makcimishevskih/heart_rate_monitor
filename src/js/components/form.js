@@ -61,6 +61,11 @@ const form = (state) => {
             const error = document.createElement('div');
             error.classList.add('error-status');
 
+            if (!inputs[i].value) {
+                error.textContent = 'Field is required';
+                inputs[i].insertAdjacentElement('afterend',error)
+                isError = true;
+            }
             const inputName = inputs[i].name;
 
             switch (inputName) {
@@ -73,12 +78,19 @@ const form = (state) => {
                     break;
 
                 case 'phone':
-                    const phoneno = /8\d{10}/gi;
-                    if (!+inputs[i].value.match(phoneno)) {
-                        error.textContent = 'Not valid phone number';
+
+                    if (inputs[i].value.length !== 16) {
+                        error.textContent = 'Not valid phone number - too short';
                         inputs[i].insertAdjacentElement('afterend',error)
                         isError = true;
                     }
+
+                    // const phoneno = /7\d{10}/gi;
+                    console.log(11111,inputs[i].value,inputs[i].value.length);
+                    // console.log(inputs[i].value, );
+                    // if (!inputs[i].value.match(phoneno)) {
+                    //     console.log(22222);
+                    // }
                     break;
 
                 case 'email':

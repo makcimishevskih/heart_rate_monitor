@@ -1,5 +1,18 @@
+import moreLink from "./moreLink.js";
+
 const catalog = (parentSelector,state) => {
     const wrapper = document.querySelector(parentSelector);
+
+    const items = document.querySelectorAll('.catalog__item');
+    const emptyListNotation = document.querySelector('.empty-list');
+
+    if (emptyListNotation) {
+        emptyListNotation.remove();
+    }
+
+    if (items) {
+        items.forEach(el => el.remove());
+    }
 
     function createCatalogItem(img,title,descr,promoPrice,price) {
         const elem = document.createElement('div');
@@ -68,6 +81,7 @@ const catalog = (parentSelector,state) => {
     }
 
     createElements(state);
+    moreLink('.catalog__list','more-link','back-link');
 }
 
 export default catalog

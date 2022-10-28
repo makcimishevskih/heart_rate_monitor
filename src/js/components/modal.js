@@ -22,6 +22,11 @@ const modal = (modalLayoutSelector,modalTrigger,modalSelector,closeButtonClass) 
         if (e.code === 'Escape') {
             closeModal(modalLayout,modalForm);
         }
+        if (e.target.tagName === 'INPUT' && e.code === 'Enter') {
+            e.preventDefault();
+            e.target.nextElementSibling.focus();
+        }
+        // console.log(e.target,e.target.tagName);
     });
 }
 

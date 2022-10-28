@@ -1,0 +1,64 @@
+@import '../vars/vars.scss';
+
+.tabs {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .tabs__item {
+        position: relative;
+        width: 220px;
+        cursor: pointer;
+
+        &:hover div:first-child {
+            transition: 0.2s box-shadow linear;
+            box-shadow: 0 0 15px $main-color;
+        }
+
+
+        &.active {
+            & div:first-child {
+                background-color: $main-color;
+                border-color: $main-color;
+
+                &+div {
+                    font-size: 16px;
+                    color: #fff;
+                }
+            }
+        }
+
+
+        &>div {
+            pointer-events: none;
+        }
+
+        .skew {
+            &:hover {
+                box-shadow: 0 0 0px 0px $main-color;
+            }
+
+            height: 50px;
+            transform: skew(-25deg);
+            border: 2px rgb(208, 208, 208) solid;
+            transition: background-color 0.2s linear,
+            color 0.1s linear;
+            background-color: transparent;
+        }
+
+        .text {
+            width: 150px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 13px;
+            font-weight: 500;
+            color: rgb(107, 107, 107);
+            text-transform: uppercase;
+        }
+    }
+}

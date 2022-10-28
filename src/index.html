@@ -25,7 +25,7 @@
 					placeholder="Ваш телефон">
 				<input class="modal__input input-email" name="email" type="text"
 					placeholder="Ваш E-mail">
-				<button type="submit" class="form-button modal__button button button_big">Заказать
+				<button class="form-button modal__button button button_big">Заказать
 					консультацию</button>
 			</form>
 			<form class="modal cart-form">
@@ -41,13 +41,12 @@
 					placeholder="Ваш телефон">
 				<input class="modal__input input-email" name="email" type="text"
 					placeholder="Ваш E-mail">
-				<button type="submit"
-					class="form-button modal__button button button_big">Купить</button>
+				<button class="form-button modal__button button button_big">Купить</button>
 			</form>
 		</div>
 	</div>
 
-	<div class="promo">
+	<div class="promo animation">
 		<div class="container promo__container">
 			<header class="header promo__header">
 				<div class="header__row">
@@ -114,11 +113,11 @@
 
 	<div class="advantage">
 		<div class="container advantage__container">
-			<h2 class="advantage__title title">Наши преимущества</h2>
+			<h2 class="advantage__title title animation">Наши преимущества</h2>
 
 			<div class="advantage__row">
 
-				<div class="advantage__row-item">
+				<div class="advantage__row-item animation">
 					<div class="advantage__img-wrapper">
 						<img class="advantage__img" src="img/icons/cup.png" alt="1">
 					</div>
@@ -128,7 +127,7 @@
 						так как сами бегают полумарафоны, переплыли Босфор, готовятся к
 						соревнованиям по триатлону!</p>
 				</div>
-				<div class="advantage__row-item">
+				<div class="advantage__row-item animation">
 					<div class="advantage__img-wrapper">
 						<img class="advantage__img" src="img/icons/heart.png" alt="2">
 					</div>
@@ -140,7 +139,7 @@
 						Вам и Вашим близким!
 					</p>
 				</div>
-				<div class="advantage__row-item">
+				<div class="advantage__row-item animation">
 					<div class="advantage__img-wrapper">
 						<img class="advantage__img" src="img/icons/shoe.png" alt="3">
 					</div>
@@ -167,10 +166,10 @@
 				Просто заполните форму заявки <br />
 				и мы перезвоним вам в течении 10 минут</h4>
 			<form accept="#" class="consultation__form">
-				<input id="name" name="name" type="text" class="input" placeholder="Ваше имя">
-				<input id="phone" name="phone" type="text" class="input" placeholder="Ваш телефон">
-				<input id="email" name="email" type="text" class="input" placeholder="Ваш E-mail">
-				<button type="submit" class="button form-button button_big btn_animation">заказать
+				<input id="name" name="name" type="text" class="input animation" placeholder="Ваше имя">
+				<input id="phone" name="phone" type="text" class="input animation" placeholder="Ваш телефон">
+				<input id="email" name="email" type="text" class="input animation" placeholder="Ваш E-mail">
+				<button type="submit" class="button form-button button_big btn_animation animation">заказать
 					консультацию</button>
 			</form>
 		</div>
@@ -203,15 +202,19 @@
 			<h2 class="title catalog__title">Каталог пульсометров</h2>
 
 			<div class="tabs">
-				<div class="tabs__item">
+				<div class="tabs__item" data-type="all">
+					<div class="skew"></div>
+					<div class="text">Все</div>
+				</div>
+				<div class="tabs__item" data-type="fitness">
 					<div class="skew"></div>
 					<div class="text">Для фитнеса</div>
 				</div>
-				<div class="tabs__item">
+				<div class="tabs__item" data-type="run">
 					<div class="skew"></div>
 					<div class="text">Для бега</div>
 				</div>
-				<div class="tabs__item">
+				<div class="tabs__item" data-type="triatlon">
 					<div class="skew"></div>
 					<div class="text">Для триатлона</div>
 				</div>
@@ -226,7 +229,7 @@
 		<div class="container clients__container">
 			<h2 class="clients__title title">Отзывы клиентов</h2>
 			<div class="clients__list">
-				<div class="clients__item">
+				<div class="clients__item animation">
 					<div class="clients__img-wrapper">
 						<img class="clients__img" src="./img/first_person.png" alt="person">
 					</div>
@@ -250,7 +253,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="clients__item">
+				<div class="clients__item animation">
 					<div class="clients__img-wrapper">
 						<img class="clients__img" src="./img/first_person.png" alt="person">
 					</div>
@@ -274,7 +277,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="clients__item">
+				<div class="clients__item animation">
 					<div class="clients__img-wrapper">
 						<img class="clients__img" src="./img/first_person.png" alt="person">
 					</div>

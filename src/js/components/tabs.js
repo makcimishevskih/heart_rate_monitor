@@ -1,4 +1,6 @@
-const tabs = (parentSelector,tabsClass) => {
+import catalog from "./catalog.js";
+
+const tabs = (state,parentSelector,tabsClass) => {
     const parent = document.querySelector(parentSelector)
     const tabs = document.querySelectorAll(`.${tabsClass}`)
 
@@ -11,12 +13,15 @@ const tabs = (parentSelector,tabsClass) => {
     const activateTabs = (arr,activeElIndex = 0) => {
         arr.forEach((el,i) => {
             if (i === activeElIndex) {
-                el.classList.add('active')
+                const type = el.dataset.type;
+                el.classList.add('active');
+                state.tabActive = type;
+                type === 'all' ? catalog('.catalog__list',state.catalogState) : filterCatalogItems();
             }
         })
     }
     reActivateTabs(tabs);
-    activateTabs(tabs);
+    activateTabs(tabs,0);
 
     parent.addEventListener('click',(e) => {
         const t = e.target;
@@ -30,7 +35,11 @@ const tabs = (parentSelector,tabsClass) => {
         }
     })
 
-
+    function filterCatalogItems() {
+        const filterCatalog = state.catalogState.filter(el => el.type === state.tabActive);
+        state.filteredCatalog = filterCatalog;
+        catalog('.catalog__list',state.filteredCatalog);
+    }
 }
 
 export default tabs

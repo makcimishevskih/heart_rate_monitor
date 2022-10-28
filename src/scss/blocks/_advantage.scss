@@ -8,6 +8,14 @@
     .advantage__container {
         .advantage__title {
             margin-bottom: 70px;
+            // opacity: 1;
+            // transform: translateX(-0px);
+
+            // &.animation {
+            //     transition: 0.5s all ease-in-out;
+            //     opacity: 0;
+            //     transform: translateX(-300px);
+            // }
         }
 
         .advantage__row {
@@ -19,6 +27,24 @@
             &-item {
                 text-align: center;
                 width: 285px;
+                opacity: 1;
+                transition: 0.5s all ease-in-out;
+                transform: translateX(0px);
+
+                &:nth-child(1).animation {
+                    opacity: 0;
+                    transform: translateX(-100px);
+                }
+
+                &:nth-child(2).animation {
+                    opacity: 0;
+                    transform: translateX(-300px);
+                }
+
+                &:nth-child(3).animation {
+                    opacity: 0;
+                    transform: translateX(-500px);
+                }
 
                 .advantage__subtitle {
                     margin-top: 35px;
