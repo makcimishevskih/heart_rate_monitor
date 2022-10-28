@@ -1,4 +1,4 @@
-import { openModal,closeModal,createNewModal } from '../modalFuncs.js';
+import { openModal,closeModal,createNewModal } from '../helpers.js';
 
 const cart = (state) => {
     const catalog = document.querySelector('.catalog__list')

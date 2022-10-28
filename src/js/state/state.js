@@ -1,15 +1,15 @@
 const state = {
-    items: [
-        { name: 'Пульсометр Polar FT1',descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',info: '',prevPrice: 4750,actualPrice: 4500 },
-        { name: 'Пульсометр Polar FT1',descr: 'Пульсометр начального уровня с комфортным тканевым ремешком',info: '',prevPrice: 6600,actualPrice: 6641 },
-        { name: 'Пульсометр Polar FT1',descr: 'Улучшенная версия Polar FT1, имеющая следующие улучшения',info: '',prevPrice: 7390,actualPrice: 7021 },
-        { name: 'Пульсометр Polar FT1',descr: 'Для первых шагов в тренировках,основанных на сердечном ритме',info: '',prevPrice: 4750,actualPrice: 4500 },
-        { name: 'Пульсометр Polar FT1',descr: 'Пульсометр начального уровня с комфортным тканевым ремешком',info: '',prevPrice: 6600,actualPrice: 6641 },
-        { name: 'Пульсометр Polar FT1',descr: 'Улучшенная версия Polar FT1, имеющая следующие улучшения',info: '',prevPrice: 6641,actualPrice: 7021 },
+    catalogState: [
+        { type: 'fitness',img: 'img/polar_pulsometr.png',title: 'Пульсометр Polar FT1',descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',promoPrice: '4 750',price: '4 500' },
+        { type: 'run',img: 'img/polar_pulsometr.png',title: 'Пульсометр Suunto M2',descr: 'Пульсометр начального уровня с комфортным тканевым ремешком',promoPrice: '6 990',price: '6 641' },
+        { type: 'fitness',img: 'img/polar_pulsometr.png',title: 'Пульсометр Polar FT4',descr: 'Улучшенная версия Polar FT1, имеющая следующие улучшения',promoPrice: '7 390',price: '7 021' },
+        { type: 'fitness',img: 'img/polar_pulsometr.png',title: 'Пульсометр Polar FT1',descr: 'Для первых шагов в тренировках, основанных на сердечном ритме',promoPrice: '4 750',price: '4 500' },
+        { type: 'run',img: 'img/polar_pulsometr.png',title: 'Пульсометр Suunto M2',descr: 'Пульсометр начального уровня с комфортным тканевым ремешком',promoPrice: '6 990',price: '6 641' },
+        { type: 'triatlon',img: 'img/polar_pulsometr.png',title: 'Пульсометр Polar FT4',descr: 'Улучшенная версия Polar FT1, имеющая следующие улучшения',promoPrice: '7 390',price: '7 021' },
     ],
-    clients: [
+    clientsState: [
         {
-            name: 'Ирина',surname: 'Иванченко',marathons: 2,
+            name: 'Ирина',surname: 'Иванченко',marathons: 5,
             descr: 'Не знала, что себе купить - обратилась к ребятам из RunSmart - подобрали пульсометр, который подошёл именно под мои цели и финансовые возможности. Через некоторое время решила обновить гаджет - не раздумывая обратилась туда же.<br>Новые цели - новый гаджет!<br>Спасибо,RunSmart!',
             imgUrl: './img/first_person.png'
         },
@@ -23,7 +23,15 @@ const state = {
             descr: 'Долго не могла начать бегать, т.к. до этого несколько раз начинала, но становилось тяжело и я бросала. От друзей услышала о RunSmart и о беге с контролем пульса и решила попробовать.<br>Позвонила,ребята поинтересовались моими целями и подобрали очень интересный вариант со скидкой! Теперь бегаю и наслаждаюсь бегом! Пробежала уже 2 полумарафона и несколько более коротких забегов и не намерена останавливаться!<br>Спасибо!!!',
             imgUrl: './img/third_person.png'
         }
-    ]
+    ],
+    cartState: {
+        cart: [],
+        count: 0,
+        sumPrice: 0,
+    },
+    tabActive: 'all',
+    filteredCatalog: []
+
 }
 
 export default state;

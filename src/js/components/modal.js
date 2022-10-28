@@ -1,4 +1,4 @@
-import { openModal,closeModal } from "../modalFuncs.js";
+import { openModal,closeModal } from "../helpers.js";
 
 const modal = (modalLayoutSelector,modalTrigger,modalSelector,closeButtonClass) => {
     const modalLayout = document.querySelector(`.${modalLayoutSelector}`);

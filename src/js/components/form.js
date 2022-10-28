@@ -1,5 +1,5 @@
 import postData from "../fetch.js";
-import { openModal,closeModal,createNewModal } from "../modalFuncs.js";
+import { openModal,closeModal,createNewModal } from "../helpers.js";
 
 const form = (state) => {
     const forms = document.querySelectorAll('form')

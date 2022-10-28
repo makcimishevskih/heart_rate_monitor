@@ -17,7 +17,7 @@
                 transform: translateX(0);
                 opacity: 1;
                 transition: all 0.5s ease;
-                
+
                 &.animation {
                     opacity: 0;
                     transform: translateX(70%);
@@ -43,11 +43,7 @@
                     max-height: 170px;
                     border-radius: 50%;
 
-                    .clients__img {
-                        max-width: 100%;
-                        max-height: 100%;
-                        object-fit: cover;
-                    }
+                    .clients__img {}
 
                 }
 
@@ -83,7 +79,36 @@
 
 
 
-@media (max-width: 621px) {}
+@media (max-width: 621px) {
+    .clients {
+
+        .clients__container {
+
+            .clients__title {}
+
+            .clients__list {
+
+                .clients__item {
+                    &.animation {
+                        opacity: 0;
+                        transform: translateX(20%);
+                    }
+
+                    .clients__img-wrapper {
+
+                        .clients__img {}
+
+
+                    }
+
+                    .clients__info {
+                        .clients__descr {}
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media (max-width: 450px) {
     .clients {
