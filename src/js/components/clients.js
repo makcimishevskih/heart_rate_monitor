@@ -1,12 +1,16 @@
-const clients = (state,parentSelector,...restClasses) => {
-    console.log('clients');
-    const parent = document.querySelector(parentSelector);
+const clients = (state, parentSelector, ...restClasses) => {
+  const parent = document.querySelector(parentSelector);
 
-    function createClientsData({ name,surname,imgUrl,marathons,descr }) {
-        const caseMarathons = marathons > 1 && marathons < 5 ? 'полумарафона' : marathons === 1 ? 'полумарафон' : 'полумарафонов'
-        const client = document.createElement('div');
-        client.classList.add(...restClasses);
-        client.innerHTML = `
+  function createClientsData({ name, surname, imgUrl, marathons, descr }) {
+    const caseMarathons =
+      marathons > 1 && marathons < 5
+        ? "полумарафона"
+        : marathons === 1
+        ? "полумарафон"
+        : "полумарафонов";
+    const client = document.createElement("div");
+    client.classList.add(...restClasses);
+    client.innerHTML = `
 					<div class="clients__img-wrapper">
 						<img class="clients__img" src="${imgUrl}" alt="person">
 					</div>
@@ -16,17 +20,16 @@ const clients = (state,parentSelector,...restClasses) => {
 						<p class="clients__descr">
 						${descr}</p>
 					</div>`;
-        parent.append(client)
+    parent.append(client);
+  }
 
-    }
+  function clientCreator() {
+    state.clientsState.forEach((client) => {
+      createClientsData(client);
+    });
+  }
 
-    function clientCreator() {
-        state.clientsState.forEach(client => {
-            createClientsData(client);
-        })
-    }
-
-    clientCreator(state.clientsState);
-}
+  clientCreator(state.clientsState);
+};
 
 export default clients;

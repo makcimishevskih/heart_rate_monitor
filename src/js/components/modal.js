@@ -1,33 +1,44 @@
-import { openModal,closeModal } from "../helpers.js";
+import { openModal, closeModal } from "../helpers.js";
 
-const modal = (modalLayoutSelector,modalTrigger,modalSelector,closeButtonClass) => {
-    const modalLayout = document.querySelector(`.${modalLayoutSelector}`);
-    const modalForm = document.querySelector(`.${modalSelector}`)
+const modal = (
+  modalLayoutSelector,
+  modalTrigger,
+  modalSelector,
+  closeButtonClass
+) => {
+  const modalLayout = document.querySelector(`.${modalLayoutSelector}`);
+  const modalForm = document.querySelector(`.${modalSelector}`);
 
-    window.addEventListener('click',(e) => {
-        const t = e.target;
-        if (t.classList.contains(closeButtonClass)) {
-            closeModal(modalLayout,modalForm);
-        } else if (t.classList.contains(modalTrigger)) {
-            openModal(modalLayout,modalForm);
-        } else if (t.classList.contains(modalLayoutSelector)) {
-            closeModal(modalLayout,modalForm);
-        }
-    });
+  window.addEventListener("click", (e) => {
+    const { target } = e;
 
-    window.addEventListener('keydown',(e) => {
-        if (e.repeat) {
-            return;
-        }
-        if (e.code === 'Escape') {
-            closeModal(modalLayout,modalForm);
-        }
-        if (e.target.tagName === 'INPUT' && e.code === 'Enter') {
-            e.preventDefault();
-            e.target.nextElementSibling.focus();
-        }
-        // console.log(e.target,e.target.tagName);
-    });
-}
+    if (target.classList.contains(closeButtonClass)) {
+      e.preventDefault();
+      closeModal(modalLayout, modalForm);
+    } else if (target.classList.contains(modalTrigger)) {
+      if (document.querySelector(".cart-form").classList.contains("open")) {
+        return;
+      }
+      openModal(modalLayout, modalForm);
+    } else if (target.classList.contains(modalLayoutSelector)) {
+      closeModal(modalLayout, modalForm);
+    }
+  });
+
+  window.addEventListener("keydown", (e) => {
+    const { target, repeat, code } = e;
+    if (repeat) {
+      return;
+    }
+    if (code === "Escape") {
+      closeModal(modalLayout, modalForm);
+    }
+    if (target.tagName === "INPUT" && code === "Enter") {
+      e.preventDefault();
+
+      target.nextElementSibling.focus();
+    }
+  });
+};
 
 export default modal;

@@ -1,0 +1,30 @@
+.promo {
+  max-width: 100%;
+  min-height: 750px;
+
+  padding: 21px 0 53px 0;
+
+  opacity: 1;
+
+  background: url(../../img/first_bg.png) center center / cover no-repeat;
+
+  transition: opacity 0.5s ease-in-out;
+}
+
+@media (max-width: 621px) {
+  .promo {
+    min-height: 500px;
+
+    padding: 21px 0 63px 0;
+
+    background-position: 20% 50%;
+  }
+}
+
+@media (max-width: 450px) {
+  .promo {
+    padding: 15px 0 43px 0;
+
+    background-position: 30% 50%;
+  }
+}

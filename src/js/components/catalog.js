@@ -1,25 +1,25 @@
 import moreLink from "./moreLink.js";
 
-const catalog = (parentSelector,state) => {
-    const wrapper = document.querySelector(parentSelector);
+const catalog = (parentSelector, state) => {
+  const wrapper = document.querySelector(parentSelector);
 
-    const items = document.querySelectorAll('.catalog__item');
-    const emptyListNotation = document.querySelector('.empty-list');
+  const items = document.querySelectorAll(".catalog__item");
+  const emptyListNotation = document.querySelector(".empty-list");
 
-    if (emptyListNotation) {
-        emptyListNotation.remove();
-    }
+  if (emptyListNotation) {
+    emptyListNotation.remove();
+  }
 
-    if (items) {
-        items.forEach(el => el.remove());
-    }
+  if (items) {
+    items.forEach((el) => el.remove());
+  }
 
-    function createCatalogItem(img,title,descr,promoPrice,price) {
-        const elem = document.createElement('div');
-        elem.classList.add('catalog__item');
-        elem.setAttribute('data-item',title);
+  function createCatalogItem(img, title, descr, promoPrice, price) {
+    const item = document.createElement("div");
+    item.classList.add("catalog__item");
+    item.setAttribute("data-item", title);
 
-        elem.innerHTML += `<div class="catalog__item-content">
+    item.innerHTML += `<div class="catalog__item-content">
                 <div class="catalog__img-wrapper">
                     <img class="catalog__img" src="${img}" alt="item">
                 </div>
@@ -58,30 +58,30 @@ const catalog = (parentSelector,state) => {
                     class="item__buy-button button button_xsmall btn_animation">Купить</button>
             </div>`;
 
-        wrapper.append(elem);
+    wrapper.append(item);
+  }
+
+  function emptyListItems() {
+    const elem = document.createElement("div");
+    elem.textContent = "Нет товаров";
+    elem.classList.add("empty-list");
+    wrapper.append(elem);
+  }
+
+  function createElements(arr) {
+    if (arr.length === 0) {
+      emptyListItems();
+      return;
     }
 
-    function emptyListItems() {
-        const elem = document.createElement('div');
-        elem.textContent = 'Нет товаров';
-        elem.classList.add('empty-list');
-        wrapper.append(elem);
+    for (let el of arr) {
+      const { img, title, descr, promoPrice, price } = el;
+      createCatalogItem(img, title, descr, promoPrice, price);
     }
+  }
 
-    function createElements(arr) {
-        if (arr.length === 0) {
-            emptyListItems();
-            return;
-        }
+  createElements(state);
+  moreLink(".catalog__list", "more-link", "back-link");
+};
 
-        for (let el of arr) {
-            const { img,title,descr,promoPrice,price } = el;
-            createCatalogItem(img,title,descr,promoPrice,price);
-        }
-    }
-
-    createElements(state);
-    moreLink('.catalog__list','more-link','back-link');
-}
-
-export default catalog
+export default catalog;

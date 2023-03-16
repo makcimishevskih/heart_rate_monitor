@@ -1,0 +1,240 @@
+@import "../vars/vars.scss";
+
+.carousel {
+  max-width: 100%;
+
+  padding: 115px 0 80px 0;
+  margin: 0 auto;
+
+  color: #000;
+
+  .carousel__container {
+    position: relative;
+
+    .carousel__wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+
+      .carousel-item {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    .tiny-prev,
+    .tiny-next {
+      border: none;
+
+      position: absolute;
+      z-index: 10;
+      top: 50%;
+      transform: translateY(-50%);
+
+      background-color: transparent;
+      cursor: pointer;
+      img {
+        width: 31px;
+        height: 50px;
+      }
+    }
+
+    .tiny-prev {
+      left: 31px;
+      transform: translateX(-50%);
+    }
+
+    .tiny-next {
+      right: 0px;
+      transform: translateX(-50%);
+    }
+  }
+
+  .tns-nav {
+    display: flex;
+
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+
+    visibility: hidden;
+
+    button {
+      display: block;
+
+      height: 30px;
+      width: 30px;
+
+      transform: scale(1);
+
+      border: 3px solid $main-color;
+      border-radius: 50%;
+
+      background-color: #fff;
+
+      transition: 0.3s linear all;
+      &.tns-nav-active {
+        border: none;
+        transform: scale(1.2);
+
+        background-color: $main-color;
+      }
+
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .slick-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    li {
+      list-style: none;
+    }
+
+    li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    li::before {
+      content: "";
+      display: block;
+
+      height: 30px;
+      width: 30px;
+
+      transform: scale(1);
+
+      border-radius: 50%;
+      background-color: $main-color;
+    }
+
+    .slick-active {
+      transform: scale(1.4);
+      transition: transform 0.4s linear;
+    }
+
+    li > button {
+      visibility: hidden;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .carousel {
+    padding: 100px 0 80px 0;
+
+    .carousel__container {
+      .tiny-prev,
+      .tiny-next {
+        visibility: hidden;
+        user-select: none;
+      }
+    }
+
+    .tns-nav {
+      bottom: 20px;
+
+      visibility: visible;
+    }
+  }
+}
+
+@media (max-width: 470px) {
+  .carousel {
+    max-width: 380px;
+
+    padding: 50px 0;
+
+    &__wrapper {
+      height: 350px;
+    }
+
+    .carousel__container {
+      .tns-nav {
+        bottom: 20px;
+
+        visibility: visible;
+
+        button {
+          height: 25px;
+          width: 25px;
+
+          &.tns-nav-active {
+            border: none;
+
+            transform: scale(1.2);
+
+            background-color: $main-color;
+          }
+
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+
+      .tiny-prev,
+      .tiny-next {
+        img {
+          width: 20px;
+          height: 35px;
+        }
+      }
+
+      .tiny-prev {
+        left: -5px;
+        transform: translateX(-50%);
+      }
+
+      .tiny-next {
+        left: 101%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .slick-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        list-style: none;
+      }
+
+      li:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      li::before {
+        content: "";
+
+        display: block;
+
+        height: 30px;
+        width: 30px;
+
+        transform: scale(1);
+
+        background-color: $main-color;
+        border-radius: 50%;
+      }
+
+      .slick-active {
+        transition: transform 0.4s linear;
+        transform: scale(1.4);
+      }
+
+      li > button {
+        visibility: hidden;
+      }
+    }
+  }
+}

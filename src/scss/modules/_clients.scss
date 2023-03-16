@@ -1,0 +1,125 @@
+.clients {
+  padding-bottom: 70px;
+
+  color: #000;
+
+  .clients__container {
+    .clients__list {
+      margin-top: 70px;
+
+      .clients__item {
+        position: relative;
+
+        display: flex;
+        justify-content: space-between;
+
+        margin-top: 50px;
+
+        opacity: 1;
+        transform: translateX(0);
+
+        transition: all 0.5s ease;
+        &.animation {
+          transform: translateX(70%);
+          opacity: 0;
+        }
+
+        &:not(:last-child)::after {
+          content: "";
+
+          position: absolute;
+          bottom: 0;
+          left: 0;
+
+          width: 100%;
+          height: 2px;
+
+          background-color: rgba(99, 99, 99, 0.1);
+        }
+
+        .clients__img-wrapper {
+          min-width: 170px;
+          min-height: 170px;
+
+          margin-right: 60px;
+
+          border-radius: 50%;
+        }
+
+        .clients__info {
+          min-height: 170px;
+          width: 100%;
+
+          padding-bottom: 40px;
+
+          text-align: left;
+
+          .clients__name-surname {
+            font-size: 18px;
+            font-weight: 700;
+          }
+
+          .clients__marathons {
+            margin-top: 10px;
+
+            font-size: 14px;
+            font-weight: 300;
+            color: #646464;
+          }
+
+          .clients__descr {
+            margin-top: 15px;
+
+            font-size: 16px;
+            font-weight: 300;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 621px) {
+  .clients {
+    .clients__container {
+      .clients__list {
+        .clients__item {
+          &.animation {
+            opacity: 0;
+            transform: translateX(20%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .clients {
+    padding-bottom: 50px;
+
+    .clients__container {
+      .clients__list {
+        margin-top: 40px;
+
+        .clients__item {
+          align-items: center;
+          flex-direction: column;
+
+          margin-top: 30px;
+
+          .clients__img-wrapper {
+            margin-right: 0px;
+          }
+
+          .clients__info {
+            margin-top: 20px;
+            padding-bottom: 30px;
+
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
