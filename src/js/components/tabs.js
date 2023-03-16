@@ -4,7 +4,7 @@ const tabs = (state, parentSelector, tabsClass) => {
   const parent = document.querySelector(parentSelector);
   const tabs = document.querySelectorAll(`.${tabsClass}`);
 
-  const reActivateTabs = (arr) => {
+  const removeActiveTabs = (arr) => {
     arr.forEach((el) => {
       el.classList.remove("active");
     });
@@ -16,19 +16,21 @@ const tabs = (state, parentSelector, tabsClass) => {
         const type = el.dataset.type;
         el.classList.add("active");
         state.tabActive = type;
+
         type === "all"
           ? catalog(".catalog__list", state.catalogState)
           : filterCatalogItems();
       }
     });
   };
-  reActivateTabs(tabs);
+  removeActiveTabs(tabs);
   activateTabs(tabs, 0);
 
   parent.addEventListener("click", (e) => {
     const t = e.target;
     if (t && t.classList.contains(tabsClass)) {
-      reActivateTabs(tabs);
+      removeActiveTabs(tabs);
+
       tabs.forEach((el, i) => {
         if (t === el) {
           activateTabs(tabs, i);
@@ -41,6 +43,7 @@ const tabs = (state, parentSelector, tabsClass) => {
     const filterCatalog = state.catalogState.filter(
       (el) => el.type === state.tabActive
     );
+
     state.filteredCatalog = filterCatalog;
     catalog(".catalog__list", state.filteredCatalog);
   }

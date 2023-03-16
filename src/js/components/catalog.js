@@ -15,11 +15,13 @@ const catalog = (parentSelector, state) => {
   }
 
   function createCatalogItem(img, title, descr, promoPrice, price) {
-    const item = document.createElement("div");
-    item.classList.add("catalog__item");
-    item.setAttribute("data-item", title);
+    // const item = document.createElement("div");
+    // item.classList.add("catalog__item");
+    // item.setAttribute("data-item", title);
 
-    item.innerHTML += `<div class="catalog__item-content">
+    wrapper.innerHTML += `
+    <div class="catalog__item" data-item="${title}">
+    <div class="catalog__item-content">
                 <div class="catalog__img-wrapper">
                     <img class="catalog__img" src="${img}" alt="item">
                 </div>
@@ -56,9 +58,8 @@ const catalog = (parentSelector, state) => {
                 </div>
                 <button
                     class="item__buy-button button button_xsmall btn_animation">Купить</button>
+            </div>
             </div>`;
-
-    wrapper.append(item);
   }
 
   function emptyListItems() {
