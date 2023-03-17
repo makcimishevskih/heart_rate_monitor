@@ -1,276 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title><%= htmlWebpackPlugin.options.title %></title>
 
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Heart rate monitor</title>
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
-	<link rel="stylesheet" href="./css/style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css"
+    />
+  </head>
 
-<body>
+  <body>
+    <a class="pageUp" href="#header">
+      <img alt="up-button" src=<%=require("./img/icons/left-arrow.png")%> />
+    </a>
 
-	<a class="pageUp" href="#header">
-		<img src="./img/icons/left-arrow.png" alt="up-button">
-	</a>
+    <div class="modal-layout">
+      <div class="modal-wrapper">
+        <form class="modal not-cart-form">
+          <button class="modal__close-button">&times;</button>
+          <h4 class="modal__title">Просто заполните форму заявки</h4>
+          <h5 class="modal__subtitle">
+            и мы перезвоним вам в течении 10 минут
+          </h5>
+          <input
+            class="modal__input input-name"
+            name="name"
+            type="text"
+            placeholder="Ваше имя"
+          />
+          <input
+            class="modal__input input-phone"
+            name="phone"
+            type="text"
+            placeholder="Ваш телефон"
+          />
+          <input
+            class="modal__input input-email"
+            name="email"
+            type="text"
+            placeholder="Ваш E-mail"
+          />
+          <button class="form-button modal__button button button_big">
+            Заказать консультацию
+          </button>
+        </form>
+        <form class="modal cart-form">
+          <button class="modal__close-button">&times;</button>
+          <h4 class="modal__title">Ваш заказ:</h4>
+          <h5 class="modal__subtitle"></h5>
+          <h5 class="modal__price"></h5>
+          <input
+            class="modal__input input-name"
+            name="name"
+            type="text"
+            placeholder="Ваше имя"
+          />
+          <input
+            class="modal__input input-phone"
+            name="phone"
+            type="text"
+            placeholder="Ваш телефон"
+          />
+          <input
+            class="modal__input input-email"
+            name="email"
+            type="text"
+            placeholder="Ваш E-mail"
+          />
+          <button class="form-button modal__button button button_big">
+            Купить
+          </button>
+        </form>
+      </div>
+    </div>
 
-	<div class="modal-layout">
-		<div class="modal-wrapper">
-			<form class="modal not-cart-form">
-				<button class="modal__close-button">&times;</button>
-				<h4 class="modal__title">Просто заполните форму заявки</h4>
-				<h5 class="modal__subtitle">и мы перезвоним вам в течении 10 минут</h5>
-				<input class="modal__input input-name" name="name" type="text"
-					placeholder="Ваше имя">
-				<input class="modal__input input-phone" name="phone" type="text"
-					placeholder="Ваш телефон">
-				<input class="modal__input input-email" name="email" type="text"
-					placeholder="Ваш E-mail">
-				<button class="form-button modal__button button button_big">Заказать
-					консультацию</button>
-			</form>
-			<form class="modal cart-form">
-				<button class="modal__close-button">&times;</button>
-				<h4 class="modal__title">Ваш заказ:</h4>
-				<h5 class="modal__subtitle">
-				</h5>
-				<h5 class="modal__price">
-				</h5>
-				<input class="modal__input input-name" name="name" type="text"
-					placeholder="Ваше имя">
-				<input class="modal__input input-phone" name="phone" type="text"
-					placeholder="Ваш телефон">
-				<input class="modal__input input-email" name="email" type="text"
-					placeholder="Ваш E-mail">
-				<button class="form-button modal__button button button_big">Купить</button>
-			</form>
-		</div>
-	</div>
+    <div id="header" class="promo animation">
+      <div class="container promo__container">
+        <header class="header promo__header">
+          <div class="header__row">
+            <div class="header__logo-wrapper">
+              <img class="header__logo" alt="header-logo"
+              src=<%=require("./img/icons/run_man_logo.png")%> />
+            </div>
+            <div class="header__official">
+              Официальный представитель
+              <br />
+              <span>Garmin, Polar, Suunto</span>
+            </div>
+            <div class="header__contacts">
+              <a class="header__phone-link phone-link" href="tel:+74999228974">
+                +7 (499) 922-89-74
+              </a>
+              <button class="modal__button button button_small btn_animation">
+                Заказать звонок
+              </button>
+            </div>
+          </div>
+        </header>
+      </div>
 
-	<div id="header" class="promo animation">
-		<div class="container promo__container">
-			<header class="header promo__header">
-				<div class="header__row">
-					<div class="header__logo-wrapper">
-						<img class="header__logo" src="../img/icons/run_man_logo.png" alt="bg">
-					</div>
-					<div class="header__official">
-						Официальный представитель
-						<br />
-						<span>Garmin, Polar, Suunto</span>
-					</div>
-					<div class="header__contacts">
-						<a class="header__phone-link phone-link" href="tel:+74999228974">
-							+7 (499) 922-89-74
-						</a>
-						<button class="modal__button button button_small btn_animation">Заказать
-							звонок</button>
-					</div>
-				</div>
-			</header>
-		</div>
+      <div class="container">
+        <div class="selection">
+          <div class="selection__container">
+            <h1 class="selection__title">Подбор пульсометра</h1>
+            <h2 class="selection__subtitle">
+              с учётом Вашего уровня подготовки
+            </h2>
 
-		<div class="container">
-			<div class="selection">
-				<div class="selection__container">
-					<h1 class="selection__title">Подбор пульсометра</h1>
-					<h2 class="selection__subtitle">с учётом Вашего уровня подготовки</h2>
+            <div class="selection__row">
+              <div class="selection__row-item">
+                <div class="selection__img-wrapper">
+                  <img class="selection__img" alt="timer-logo"
+                  src=<%=require("./img/icons/timer.png")%> />
+                </div>
+                <h5 class="selection__item-subtitle">Время подбора 10 минут</h5>
+              </div>
 
-					<div class="selection__row">
-						<div class="selection__row-item">
-							<div class="selection__img-wrapper">
-								<img class="selection__img" src="./img/icons/timer.png" alt="1">
-							</div>
-							<h5 class="selection__item-subtitle">Время подбора 10 минут</h5>
-						</div>
+              <div class="selection__row-item">
+                <div class="selection__img-wrapper">
+                  <img class="selection__img" alt="delivery-logo"
+                  src=<%=require("./img/icons/delivery.png")%> />
+                </div>
+                <h5 class="selection__item-subtitle">бесплатная доставка</h5>
+              </div>
 
-						<div class="selection__row-item">
-							<div class="selection__img-wrapper">
-								<img class="selection__img" src="./img/icons/delivery.png" alt="2">
-							</div>
-							<h5 class="selection__item-subtitle">бесплатная доставка</h5>
-						</div>
+              <div class="selection__row-item">
+                <div class="selection__img-wrapper">
+                  <img class="selection__img" alt="messages-logo"
+                  src=<%=require("./img/icons/messages.png")%> />
+                </div>
+                <h5 class="selection__item-subtitle">Вермя подбора 10 минут</h5>
+              </div>
+            </div>
 
-						<div class="selection__row-item">
-							<div class="selection__img-wrapper">
-								<img class="selection__img" src="./img/icons/messages.png" alt="3">
-							</div>
-							<h5 class="selection__item-subtitle">Вермя подбора 10 минут</h5>
-						</div>
-					</div>
+            <div class="selection__bottom">
+              <button class="modal__button button button_big btn_animation">
+                Заказать консультацию
+              </button>
+              <span class="selection__bottom-catalog"
+                >или
+                <a class="selection__bottom-link" href="#catalog"
+                  >перейти в каталог</a
+                ></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-					<div class="selection__bottom">
-						<button class="modal__button button button_big btn_animation">Заказать
-							консультацию</button>
-						<span class="selection__bottom-catalog">или <a
-								class='selection__bottom-link' href="#catalog">перейти в
-								каталог</a></span>
-					</div>
+    <div class="advantage">
+      <div class="container advantage__container">
+        <h2 class="advantage__title title animation">Наши преимущества</h2>
 
-				</div>
-			</div>
-		</div>
-	</div>
+        <div class="advantage__row">
+          <div class="advantage__row-item animation">
+            <div class="advantage__img-wrapper">
+              <img class="advantage__img advantage__cup" alt="cup-logo"
+              src=<%=require("./img/icons/cup.png")%> />
+            </div>
+            <h5 class="advantage__subtitle">Делимся опытом</h5>
+            <p class="advantage__descr">
+              Наши сотрудники всегда готовы поделиться своим опытом, так как
+              сами бегают полумарафоны, переплыли Босфор, готовятся к
+              соревнованиям по триатлону!
+            </p>
+          </div>
+          <div class="advantage__row-item animation">
+            <div class="advantage__img-wrapper">
+              <img class="advantage__img advantage__heart" alt="heart-logo"
+              src=<%=require("./img/icons/heart.png")%> />
+            </div>
+            <h5 class="advantage__subtitle">Заботимся о здоровье</h5>
+            <p class="advantage__descr">
+              Мы работаем для того, чтобы Ваши занятия спортом шли на пользу
+              Вашему здоровью и были в радость Вам и Вашим близким!
+            </p>
+          </div>
+          <div class="advantage__row-item animation">
+            <div class="advantage__img-wrapper">
+              <img class="advantage__img advantage__shoe" alt="shoe-logo"
+              src=<%=require("./img/icons/shoe.png")%> />
+            </div>
+            <h5 class="advantage__subtitle">Учим бегать</h5>
+            <p class="advantage__descr">
+              Помогаем с обучением правильной технике бега! Дружим с крупнейшей
+              школой бега в России - <span>I LOVE RUNNING.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-	<div class="advantage">
-		<div class="container advantage__container">
-			<h2 class="advantage__title title animation">Наши преимущества</h2>
+    <div class="consultation">
+      <div class="container consultation__container">
+        <h2 class="consultation__title">
+          Получите бесплатную консультацию по подбору пульсометра
+        </h2>
+        <h4 class="consultation__subtitle">
+          Просто заполните форму заявки <br />
+          и мы перезвоним вам в течении 10 минут
+        </h4>
+        <form class="consultation__form">
+          <input
+            id="name"
+            name="name"
+            type="text"
+            class="input animation"
+            placeholder="Ваше имя"
+          />
+          <input
+            id="phone"
+            name="phone"
+            type="text"
+            class="input animation"
+            placeholder="Ваш телефон"
+          />
+          <input
+            id="email"
+            name="email"
+            type="text"
+            class="input animation"
+            placeholder="Ваш E-mail"
+          />
+          <button
+            type="submit"
+            class="button form-button button_big btn_animation animation"
+          >
+            заказать консультацию
+          </button>
+        </form>
+      </div>
+    </div>
 
-			<div class="advantage__row">
+    <div class="carousel">
+      <div class="container carousel__container">
+        <div class="carousel__wrapper">
+          <div class="carousel-item">
+            <img alt="slide-1" src=<%=require("./img/polar_slider1.png")%> />
+          </div>
+          <div class="carousel-item">
+            <img alt="slide-2" src=<%=require("./img/polar_slider2.png")%> />
+          </div>
+          <div class="carousel-item">
+            <img alt="slide-3" src=<%=require("./img/polar_slider3.png")%> />
+          </div>
+        </div>
+        <button type="button" class="tiny-prev">
+          <img alt="prev-arrow" src=<%=require("./img/icons/left-arrow.png")%>
+          />
+        </button>
+        <button type="button" class="tiny-next">
+          <img alt="next-arrow" src=<%=require("./img/icons/right-arrow.png")%>
+          />
+        </button>
+      </div>
+    </div>
 
-				<div class="advantage__row-item animation">
-					<div class="advantage__img-wrapper">
-						<img class="advantage__img advantage__cup" src="img/icons/cup.png" alt="1">
-					</div>
-					<h5 class="advantage__subtitle">Делимся опытом</h5>
-					<p class="advantage__descr">Наши сотрудники всегда готовы поделиться своим
-						опытом,
-						так как сами бегают полумарафоны, переплыли Босфор, готовятся к
-						соревнованиям по триатлону!</p>
-				</div>
-				<div class="advantage__row-item animation">
-					<div class="advantage__img-wrapper">
-						<img class="advantage__img advantage__heart" src="img/icons/heart.png"
-							alt="2">
-					</div>
-					<h5 class="advantage__subtitle">Заботимся о здоровье</h5>
-					<p class="advantage__descr">
-						Мы работаем для того,
-						чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в
-						радость
-						Вам и Вашим близким!
-					</p>
-				</div>
-				<div class="advantage__row-item animation">
-					<div class="advantage__img-wrapper">
-						<img class="advantage__img advantage__shoe" src="img/icons/shoe.png"
-							alt="3">
-					</div>
-					<h5 class="advantage__subtitle">Учим бегать</h5>
-					<p class="advantage__descr">
-						Помогаем с обучением
-						правильной технике бега!
-						Дружим с крупнейшей школой бега в России - <span>I LOVE RUNNING.</span>
+    <div id="catalog" class="catalog">
+      <div class="container">
+        <h2 class="title catalog__title">Каталог пульсометров</h2>
 
-					</p>
-				</div>
+        <div class="tabs">
+          <div class="tabs__item" data-type="all">
+            <div class="skew"></div>
+            <div class="text">Все</div>
+          </div>
+          <div class="tabs__item" data-type="fitness">
+            <div class="skew"></div>
+            <div class="text">Для фитнеса</div>
+          </div>
+          <div class="tabs__item" data-type="run">
+            <div class="skew"></div>
+            <div class="text">Для бега</div>
+          </div>
+          <div class="tabs__item" data-type="triatlon">
+            <div class="skew"></div>
+            <div class="text">Для триатлона</div>
+          </div>
+        </div>
 
-			</div>
+        <div class="catalog__list"></div>
+      </div>
+    </div>
 
-		</div>
-	</div>
+    <div class="clients">
+      <div class="container clients__container">
+        <h2 class="clients__title title">Отзывы клиентов</h2>
+        <div class="clients__list"></div>
+      </div>
+    </div>
 
-	<div class="consultation">
-		<div class="container consultation__container">
-			<h2 class="consultation__title">
-				Получите бесплатную консультацию по подбору пульсометра
-			</h2>
-			<h4 class="consultation__subtitle">
-				Просто заполните форму заявки <br />
-				и мы перезвоним вам в течении 10 минут</h4>
-			<form class="consultation__form">
-				<input id="name" name="name" type="text" class="input animation"
-					placeholder="Ваше имя">
-				<input id="phone" name="phone" type="text" class="input animation"
-					placeholder="Ваш телефон">
-				<input id="email" name="email" type="text" class="input animation"
-					placeholder="Ваш E-mail">
-				<button type="submit"
-					class="button form-button button_big btn_animation animation">заказать
-					консультацию</button>
-			</form>
-		</div>
-	</div>
+    <footer class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.43048007664!2d37.646996!3d55.768395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a636edcd2ad%3A0x4c2ca101e2c8c617!2z0JzRj9GB0L3QuNGG0LrQuNC5INC_0YAt0LQsIDQvMywg0JzQvtGB0LrQstCwLCAxMDcwNzg!5e0!3m2!1sru!2sru!4v1666458815398!5m2!1sru!2sru"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      >
+      </iframe>
+      <div class="container map__container">
+        <div class="map__info info">
+          <address class="map__address">
+            Москва, Мясницкий проезд, д.3с1
+          </address>
+          <a class="map__phone phone-link">8 (499) 922-89-74</a>
+          <div class="map__icons">
+            <a class="map__link-icon" href="#">
+              <img class="map__icon" alt="facebook"
+              src=<%=require("./img/icons/facebook.png")%> />
+            </a>
+            <a class="map__link-icon" href="#">
+              <img class="map__icon" alt="instagram"
+              src=<%=require("./img/icons/instagram.png")%> />
+            </a>
+            <a class="map__link-icon" href="#">
+              <img class="map__icon" alt="pinterest"
+              src=<%=require("./img/icons/pinterest.png")%> />
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-	<div class="carousel">
-		<div class="container carousel__container">
-			<div class="carousel__wrapper">
-				<div class="carousel-item">
-					<img src="./img/polar_slider1.png" alt="1">
-				</div>
-				<div class="carousel-item">
-					<img src="./img/polar_slider2.png" alt="2">
-				</div>
-				<div class="carousel-item">
-					<img src="./img/polar_slider3.png" alt="3">
-				</div>
-			</div>
-			<button type="button" class="tiny-prev">
-				<img src="../img/icons/left-arrow.png" alt="prev">
-			</button>
-			<button type="button" class="tiny-next">
-				<img src="../img/icons/right-arrow.png" alt="next">
-			</button>
-		</div>
-	</div>
+    <script src="https://unpkg.com/imask"></script>
+    <script
+      async
+      src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"
+    ></script>
 
-	<div id="catalog" class="catalog">
-		<div class="container">
-			<h2 class="title catalog__title">Каталог пульсометров</h2>
-
-			<div class="tabs">
-				<div class="tabs__item" data-type="all">
-					<div class="skew"></div>
-					<div class="text">Все</div>
-				</div>
-				<div class="tabs__item" data-type="fitness">
-					<div class="skew"></div>
-					<div class="text">Для фитнеса</div>
-				</div>
-				<div class="tabs__item" data-type="run">
-					<div class="skew"></div>
-					<div class="text">Для бега</div>
-				</div>
-				<div class="tabs__item" data-type="triatlon">
-					<div class="skew"></div>
-					<div class="text">Для триатлона</div>
-				</div>
-			</div>
-
-			<div class="catalog__list">
-			</div>
-		</div>
-	</div>
-
-	<div class="clients">
-		<div class="container clients__container">
-			<h2 class="clients__title title">Отзывы клиентов</h2>
-			<div class="clients__list">
-			</div>
-		</div>
-	</div>
-
-	<footer class="map">
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.43048007664!2d37.646996!3d55.768395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a636edcd2ad%3A0x4c2ca101e2c8c617!2z0JzRj9GB0L3QuNGG0LrQuNC5INC_0YAt0LQsIDQvMywg0JzQvtGB0LrQstCwLCAxMDcwNzg!5e0!3m2!1sru!2sru!4v1666458815398!5m2!1sru!2sru"
-			allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-		</iframe>
-		<div class="container map__container">
-			<div class="map__info info">
-				<address class="map__address">Москва, Мясницкий проезд, д.3с1</address>
-				<a class="map__phone phone-link">8 (499) 922-89-74</a>
-				<div class="map__icons">
-					<a class="map__link-icon" href="#">
-						<img class="map__icon" src="./img//icons/facebook.png" alt="facebook">
-					</a>
-					<a class="map__link-icon" href="#">
-						<img class="map__icon" src="./img/icons/instagram.png" alt="instagram">
-					</a>
-					<a class="map__link-icon" href="#">
-						<img class="map__icon" src="./img/icons/pinterest.png" alt="pinterest">
-					</a>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<script src="https://unpkg.com/imask"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-	<script type="module" src="./js/script.js"></script>
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>

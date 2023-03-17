@@ -1,3 +1,8 @@
+@import "./vars/vars.scss";
+@import "./fonts/fonts.scss";
+
+@import "modules/reset";
+
 @import "modules/promo";
 @import "modules/header";
 @import "modules/selection";
@@ -7,11 +12,8 @@
 @import "modules/catalog";
 @import "modules/modal";
 @import "modules/clients";
-@import "modules/map";
 @import "modules/tabs";
-@import "modules/reset";
-@import "fonts/fonts";
-@import "vars/vars";
+@import "modules/map";
 
 * {
   margin: 0;

@@ -3,7 +3,7 @@
 
   min-height: 680px;
 
-  background: url("../../img/second_bg.png") center center / cover no-repeat;
+  background: url("../img/second_bg.png") center center / cover no-repeat;
 
   &__title {
     font-size: 36px;
@@ -101,7 +101,7 @@
 
 @media (max-width: 450px) {
   .consultation {
-    background: url("../../img/second_bg.png") 60% 50% / cover no-repeat;
+    background: url("../img/second_bg.png") 60% 50% / cover no-repeat;
 
     &__title {
       font-size: 22px;
