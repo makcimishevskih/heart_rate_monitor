@@ -1,6 +1,4 @@
 import { tns } from "../../../node_modules/tiny-slider/src/tiny-slider";
-// import { tns } from "tiny-slider/src/tiny-slider.module"
-
 
 const slider = tns({
   container: ".carousel__wrapper",
