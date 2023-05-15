@@ -1,7 +1,7 @@
-Heart rate monitors site.
+HR Monitors Landing
 
-Features: slider, tabs, post form.
-
-Libs: Webpack, Sass, Tiny-slider, IMask.
+Libs: HTML, JavaScript, Webpack, Sass, Tiny-slider, IMask.
 
 Api: intersection observer, fetch
+
+Netlify: https://hr-monitors-m-i-portfolio.netlify.app
